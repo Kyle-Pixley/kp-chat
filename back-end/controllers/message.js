@@ -2,7 +2,6 @@ const router = require("express").Router();
 const Message = require("../models/message");
 const adminValidation = require("../middlewares/admin");
 
-// todo none of this has been tested yet need to finish room controllers first
 
 router.get("/:room_id", async (req, res) => {
     try {
@@ -42,6 +41,7 @@ router.post("/:room_id", async (req, res) => {
     }
 });
 
+// admin update message
 router.put("/:message_id", async (req, res) => {
     try {
         const { message_id } = req.params;
@@ -70,6 +70,8 @@ router.put("/:message_id", async (req, res) => {
         });
     }
 });
+
+
 
 router.delete("/:message_id", async (req, res) => {
     try {
